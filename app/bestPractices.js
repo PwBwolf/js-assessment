@@ -9,7 +9,8 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.bestPracticesAnswers = {
   globals: function() {
-    myObject = {
+    // if you do not declare myObject as a variable it get declared at global scope
+    var myObject = {
       name: 'Jory'
     };
 
@@ -17,10 +18,11 @@ exports.bestPracticesAnswers = {
   },
 
   parseInt: function(num) {
-    return parseInt(num);
+    //use base of 10, indicates to convert from a decimal numeral system
+    return parseInt(num, 10);
   },
 
   identity: function(val1, val2) {
-
+    return val1 === val2;
   }
 };
